@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <td>Id</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+
+    {% for author in authors %}
+        <tr>
+            <td>{{ author.id }}</td>
+            <td>{{ author.username }}</td>
+            <td>{{ author.email }}</td>
+            <td><a href="{{ path('author.edit' ,{'id': author.id})}}">editer</a></td>
+            <td><a href="{{ path('author.delete' ,{'id': author.id})}}">supprimer</a></td>
+        </tr>
+
+    {% endfor %}
+
+
+
+
+</table>
+</body>
+</html>

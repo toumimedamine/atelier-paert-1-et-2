@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1><a href="{{ path('book.red') }}">Ajouter</a></h1>
+<table border="2">
+    <tr>
+        <td>ref</td>
+        <td>author</td>
+        <td>title</td>
+        <td>category</td>
+        <td>published_date</td>
+        <td>published</td>
+        <td>Delete</td>
+        <td>Update</td>
+        
+    </tr>
+
+    {% for i in x %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.author }}</td>
+            <td>{{ i.title }}</td>
+            <td>{{ i.category }}</td>
+            <td>{{ i.publicationDate }}</td>
+            <td>{{ i.published }}</td>
+            <td><a href="{{ path('book.delete',{'id' : i.id }) }}">Delete</a></td>
+            <td><a href="{{ path('book.edit',{'id' : i.id }) }}">Update</a></td>
+
+        </tr>
+
+    {% endfor %}
+
+
+
+
+</table>
+</body>
+</html>
